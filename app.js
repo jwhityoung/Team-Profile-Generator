@@ -1,11 +1,11 @@
 var inquirer = require("inquirer");
-var Manager = require("./lib/manager");
-var Engineer = require("./lib/engineer");
-var Intern = require("./lib/intern");
+var Manager = require("./lib/Manager");
+var Engineer = require("./lib/Engineer");
+var Intern = require("./lib/Intern");
 var render = require("./lib/htmlrenderer");
 
-const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+// const OUTPUT_DIR = path.resolve(__dirname, "output");
+// const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 
 const employees = []
@@ -15,7 +15,7 @@ const employees = []
 
 function newTeamMember() {
 
-   promptUser()([
+  inquirer.prompt([
         {
             type: "list",
             message: "What's your role within the company?",
@@ -156,7 +156,9 @@ function newTeamMember() {
 
 module.exports = employees
 
-newTeamMember()
+newTeamMember();
+
+
             
         
             
